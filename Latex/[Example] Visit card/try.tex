@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage[utf8]{inputenc} 
+\usepackage{businesscard}
+\usepackage{graphicx}
+%\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
+
+
+% personal data
+\name{\Large Name\\ \large \textsc{Surname}}
+\title{Title}
+%\adress{Poitiers, France}
+\email{\footnotesize name@email.fr}
+\phone{\footnotesize 05.49.49.68.75 ~$\vline$~  06.X }
+\homepage{\footnotesize https://Website.com}
+\extrainfo{ %\begin{sloppypar}
+\hspace{0.7cm}\hspace{-1cm}\begin{minipage}{0.7cm} \includegraphics[width=0.9cm]{logoc.png} \end{minipage}\hspace{0.4cm}\begin{minipage}{1cm}\includegraphics[width=1.3cm]{logo1.png} \end{minipage}
+\hspace{0.4cm}\begin{minipage}{1cm} \includegraphics[width=1.3cm]{logo2.png} \end{minipage}\hspace{0.4cm}
+\begin{minipage}{0.8cm} \includegraphics[width=1.2cm]{logo3.jpg} \end{minipage}
+ }
+\logo{logo4}
+\qr{QQ}%
+%\qr{unitag_qrcode}
+
+
+\begin{document}
+\definecolor{uni}{rgb}{0.3647,0.6157,0.7960}
+
+%\createonecard
+\createcards
+\end{document}

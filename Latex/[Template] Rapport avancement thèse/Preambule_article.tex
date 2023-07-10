@@ -1,0 +1,75 @@
+%------------------ECRIRE EN FRANCAIS-----------
+\setlength{\parindent}{0cm}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc} %permet les accents
+\usepackage[cyr]{aeguill} %ajout guillemets spéciaux
+\usepackage{lmodern}
+%\usepackage[utf8]{inputenc} 
+\usepackage[latin1]{inputenc}
+
+%------------------MATHS---------------
+\usepackage{amsmath, amsthm, amssymb} 
+\usepackage{dsfont}
+\usepackage{mathrsfs} %permet les jolies lettres rondes
+
+%----------AJOUT COULEURS-----------------
+\usepackage[svgnames]{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{gris}{gray}{0.9}
+
+%-----------FIGURES ET SOUS-FIGURES-------------
+\usepackage[pdftex]{graphicx}
+\usepackage{float} %sous-figures
+\usepackage{subfig} %sous-figures
+\usepackage[rightcaption]{sidecap} %titre a droite
+
+%--------------STYLISATION DES LIENS ET CITE--------
+\usepackage{hyperref}
+\hypersetup{ %Recolarisation
+colorlinks=true,           
+breaklinks=true,
+urlcolor= blue, 
+linkcolor= black,
+citecolor= blue
+}
+
+%----------------ENUMERATIONS-----------
+\usepackage{enumerate} %permet les énumérations
+
+%-------------------ESPACES-------------
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%-----------------NOUVELLES COMMANDES----------------
+\newcommand{\fnct}[5]{#1: \begin{array}{ccc} #2 \longrightarrow &#3\\ #4&\longmapsto &#5\end{array}} %fonctions
+\newcommand{\fnc}[5]{ \begin{array}{c|ccc} #1: &#2&\longrightarrow &#3\\ &#4&\longmapsto &#5\end{array}} %fonctions
+\newcommand{\di}{\mbox{d}} 
+\newcommand*{\norm}[1]{\left\lVert#1\right\rVert} % La norme
+\newcommand*{\abs}[1]{\left \vert#1 \right \vert} %valeur absolue
+\newenvironment{pushright}{
+\begin{itemize}\item[\hspace{12pt}]}{\end{itemize}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+
+%---------------Tableau---------------
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+%---------RECTIFICATION DES MARGES ETC-------
+\topmargin-1.5cm
+\textheight25cm
+\textwidth17.6cm
+\oddsidemargin-1cm
+\evensidemargin0cm
+\pagestyle{plain}
+\setlength{\parindent}{0cm}
+
+\newcommand{\reporttitle}{Rapport d'avancement}     % Titre
+\newcommand{\reportauthor}{ } % Auteur

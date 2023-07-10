@@ -1,0 +1,192 @@
+\pdfobjcompresslevel 0
+\documentclass[a4paper, 12pt, twoside, openright]{article}
+
+\input{config_p}
+\input{credentials}
+\input{commandes_p}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+
+\renewcommand{\thefigure}{\textbf{\arabic{section}.\arabic{figure}}}
+\renewcommand{\thesubsection}{~~~~~~~~~~~~~~~~\textbf{\arabic{subsection}.}}
+
+\makeatletter
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.5ex\@plus -.3ex \@minus -.2ex}%
+                                     {.5ex \@plus .2ex}%
+                                     {\normalfont\small\bfseries}}
+\makeatother
+
+\DeclareFontFamily{T1}{cmr}{\hyphenchar\font=-1}
+\sloppy
+\makeatletter
+\def\captionoff#1#2{{\def\@captype{#1}#2}}
+\makeatother
+
+\makeatletter
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+\hbox to \hsize{%
+\vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vtop{\raggedright #1}}%
+\hss
+\clap{\vtop{\centering #2}}%
+\hss
+\llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+\hbox to \hsize{%
+\rlap{\vbox{\raggedright #1}}%
+\hss
+\clap{\vbox{\centering #2}}%
+\hss
+\llap{\vbox{\raggedleft #3}}}}%
+\def\maketitle{%
+\thispagestyle{empty}\vbox to \vsize{%
+{\color{gris_up}\hrule height 3pt}
+\vspace{1cm}
+\begin{flushleft}
+\usefont{OT1}{ptm}{m}{n}
+\begin{center}
+{\huge Dossier de présentation }\\
+\textit{}
+\end{center}
+\end{flushleft}
+\vspace{1cm}
+{\color{gris_up}\hrule height 3pt}
+
+
+\vfill
+
+\begin{center}
+{\color{brun_up}\Large \textbf{Prénom Nom}}\\
+Ingénieur de Recherche / Post-doctorante en Mathématiques\\
+Qualifiée en sections X,\\
+Université de X,\\
+Laboratoire de X,\\
+E-mail : X\\
+Site : \href{X}{X}.
+\end{center}
+
+\vfill
+
+{\setlength{\baselineskip}{0.3\baselineskip}
+\tableofcontents\par}
+
+\vfill
+\bas{}{X, Juin 2020}{}
+}%
+\cleardoublepage
+}
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\date{\today}
+\author{}
+\title{}
+\location{Poitiers}\blurb{}
+\makeatother
+
+
+\begin{document}
+\maketitle
+
+%---------------------PARTIE 1----------------------------------
+
+
+\section{Parcours \& Compétences}
+
+\begin{enumerate}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre} Résumé du parcours.} Seules les affiliations relatives aux mathématiques sont précisées.
+\begin{itemize}
+\item[$\triangleright$] \textit{Licence en mathématiques générales et applications, X, 2014.}\\
+X
+\item[$\triangleright$] \textit{Master Maths en Action - Mathématiques pour la biologie et la médecine, Université de X, 2016.}\\
+X
+\item[$\triangleright$] \textit{Doctorat en mathématiques appliquées, Université de Xs, 2019.}\\
+X
+\item[$\triangleright$] \textit{Ingénieur de Recherche - Postdoctorat en mathématiques, CHU de X, en cours.}\\
+X
+\end{itemize}
+\vspace{0.3cm}
+\item[\color{MagSombre} $\bullet$] \textbf{\color{MagSombre} Compétences linguistiques.}
+\begin{itemize}
+\item[$\triangleright$] X
+\end{itemize}
+\vspace{0.3cm}
+\item[\color{MagSombre} $\bullet$] \textbf{\color{MagSombre} Compétences informatiques.}
+\begin{itemize}
+\item[$\triangleright$]Logiciels :X.
+\item[$\triangleright$]Programmation : X.
+\end{itemize}
+\end{enumerate}
+
+\newpage
+\section{Activité d'Enseignement}\label{ens}
+\begin{itemize}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Contrat de vacataire.} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Encadrement de stagiaire.} X 
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Crédo pour l'enseignement.} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Activité liée à la Popularisation.} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Bénévolat.} X
+\end{itemize}
+
+\section{Activité Administrative \& Autres Responsabilités Collectives}
+\begin{itemize}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Représentante des doctorants} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Demandes de bourse} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Accueil} X
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Coorganisation de conférences} X
+\end{itemize}
+
+\section{Activité de Recherche}\label{AR}
+X
+
+\section{Publications \& Communications}\label{C}
+\begin{itemize}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre} Communications écrites soumises}
+\begin{enumerate}[label={[C\arabic*]}]
+\item \hypertarget{C1} X
+\end{enumerate}
+
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre} Publications dans des revues internationales à comité de lecture}
+\begin{enumerate}[label={[C\arabic*]},resume]
+\item  \hypertarget{C2} X
+\end{enumerate}
+
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Communications orales nationales.}
+\begin{itemize}
+\item[$\triangleright$] X
+\end{itemize}
+
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Communications orales internationales.}
+\begin{itemize}
+\item[$\triangleright$] X
+\end{itemize}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Communications avec support (poster \& E-poster).} \begin{itemize}
+\item[$\triangleright$] X
+\end{itemize}
+\end{itemize}
+
+\newpage
+\section{Projet de Recherche}
+\begin{itemize}
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Résumé du projet de recherche.} X\\
+
+\item[\color{MagSombre}$\bullet$] \textbf{\color{MagSombre}Axes du projet de recherche.} X\\ 
+
+\item[\color{MagSombre}$\bullet$]\textbf{\color{MagSombre}Conclusion.} X \\
+\end{itemize} 
+ 
+%\nocite{*}
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{7\hspace{0.4cm}Références} 
+\bibliographystyle{siam-fr}
+\bibliography{dossier}
+
+ 
+\end{document}

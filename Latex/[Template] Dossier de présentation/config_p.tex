@@ -1,0 +1,66 @@
+% !TeX root = thesis.tex
+
+%% Reglages des packages %%   
+\usepackage[sfdefault]{AlegreyaSans}
+\renewcommand*\oldstylenums[1]{{\AlegreyaSansOsF #1}}
+
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[greek,french]{babel}
+\usepackage{enumitem}
+\usepackage{amssymb, amsmath, amsfonts, amsthm,mathrsfs}
+
+%--------------------------sur la bio + hyperref
+\usepackage[pdfa]{hyperref}
+\usepackage{bookmark}
+
+\usepackage[dvipsname,table,xcdraws]{xcolor}
+
+\usepackage[inner=2cm,outer=2cm, bottom=2cm, top=2cm, headheight=15pt]{geometry}
+
+% To create effect on chapter title
+\usepackage[explicit, noindentafter]{titlesec}
+
+% Better reference
+\usepackage{cleveref}
+
+
+% package for spacing between lines
+\usepackage{setspace}
+
+% package for indentation
+\usepackage{indentfirst}
+
+%BUG PACKAGE TITLESEC CORRECTIF
+%https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+% Package de mise en page headers
+\usepackage{fancyhdr}
+
+% Package pour l'utilisation de sous figures
+\usepackage{subcaption}
+
+% TikZ packages
+\usepackage{tikz}
+\usepackage{pgfplots, pgfplotstable, pgffor}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
+
+
+%les boites
+	\usepackage[tikz]{bclogo}
+	\usepackage{tikz,tkz-tab}
+	\usepackage{pack/boiberne}
+	
+
+%Interdire les césures
+\usepackage[none]{hyphenat}
+
+

@@ -1,0 +1,179 @@
+% Define my own latex command
+
+%%% Fonts
+\newcommand*{\myfont}{\fontfamily{cmr}\selectfont}
+\newenvironment{myFont}{\myfont}{\par}
+\newenvironment{myCustomFont}{\AlegreyaSans}{}
+
+%%%% Colors
+\definecolor{MagSombre}{rgb}{0.5,0.09,0.09}
+\definecolor{green_forest}{RGB}{34,139,34}
+\definecolor{qqzzqq}{rgb}{0,0.6,0}
+\definecolor{ffqqtt}{rgb}{1,0,0.2}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+
+\definecolor{gris_up}{RGB}{235,235,235}
+\definecolor{brun_up}{RGB}{155,137,118}
+\definecolor{rouge_up}{RGB}{164,16,42}
+
+\definecolor{vert_lma}{RGB}{1,160,138}
+\definecolor{vertf_lma}{RGB}{0,95,80}
+\definecolor{bleu_lma}{RGB}{46,69,145}
+
+\definecolor{brun_down}{RGB}{125,109,91}
+
+% Notes in the document
+\newcommand\mynotes[1]{\begin{center}
+	\vspace{7mm}\textit{\textcolor{rouge_up}{#1}}\vspace{7mm}\end{center}}
+
+%%% Numbering
+\setcounter{secnumdepth}{3}
+
+%%% Define a new line spacing
+\linespread{1.15}
+
+%%% Config fancyhdr
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+\renewcommand{\chaptermark}[1]
+	{\markboth{\chaptername ~ \thechapter\ --- #1}{}}
+	\renewcommand{\sectionmark}[1]%
+	{\markright{\thesection.\ #1}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhf{}
+	\fancyhead[RO,LE]{\myCustomFont{ \thepage}}
+	\renewcommand{\headrule}{\color{gris_up}{\rule{\textwidth}{0.5mm}}}
+
+\fancypagestyle{plain}{%
+\fancyfoot[C]{\copyright \\ Page \thepage}
+\renewcommand{\headrule}{\color{gris_up}{\rule{\textwidth}{0.5mm}}}
+%\renewcommand{\headrulewidth}{0.5pt}
+}
+
+%%% Change paragraph appearence        
+\titleformat{\paragraph}
+{}
+{}
+{0pt}
+{\normalsize\textit{#1}}
+
+%%% Indentation
+\titlespacing*{\section}{0pt}{*6}{*2}
+\titlespacing*{\subsection}{2em}{*6}{*2}
+\titlespacing*{\subsubsection}{4em}{*6}{*2}
+\setlength{\parindent}{0.5cm}
+
+%%% raccourcis
+\newcommand{\etc}{\textit{etc}}
+
+%%% Hyperref
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobatâs bookmarks
+    pdftoolbar=true,        % show Acrobatâs toolbar?
+    pdfmenubar=true,        % show Acrobatâs menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={\Title},    % title
+    pdfauthor={\Author},     % author
+    pdfsubject={X},   % subject of the document
+    pdfcreator={\Author},   % creator of the document
+    pdfproducer={\Author}, % producer of the document
+    pdfkeywords={X}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor= MagSombre,
+    linkcolor= MagSombre,
+    linkbordercolor = white,         
+    citecolor= green_forest, % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=bleu_lma           % color of external links
+}
+
+
+\newenvironment{watermarking}%
+
+
+%-------------------------------------------Commandes en supp
+
+
+%Mes alinéas
+\newcommand{\1}{\displaystyle{\mathds{1}}}
+\newcommand{\Li}{\mathscr{L}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\hs}{\hspace{0.02cm}}
+\newcommand*{\norm}[1]{\left\lVert#1\right\rVert} % Norme
+\newcommand*{\abs}[1]{\left \vert#1 \right \vert} % Valeur absolue
+\newenvironment{pushright}{\begin{itemize}\item[\hspace{12pt}]}{\end{itemize}}
+\newcommand{\di}{\mbox{d}}
+\newcommand{\fat}{$\forall~t \in \mathbb{R}^+$}  
+\newcommand{\banana}{{\color{red}\Huge \begin{center}MANQUE IMAGE !\end{center}}}
+\newcommand{\bananay}{{\color{red}\Huge \begin{center}MANQUE TEXTE !\end{center}}}
+
+
+%fonctions avec barre
+\newcommand{\fnc}[5]{ \begin{array}{c|ccc} #1: &#2&\longrightarrow &#3\\ &#4&\longmapsto &#5\end{array}} 
+
+%cas
+\newcommand{\cas}[4]{#1=\left\{
+\begin{array}{rl}
+#2 &\text{ si }#3 \\
+#4 &\text{ sinon.}
+\end{array}
+\right.}
+
+%casf
+\newcommand{\casf}[3]{\left\{
+\begin{array}{rl}
+#1 &\text{ si }#2 \\
+#3 &\text{ sinon.}
+\end{array}
+\right.}
+
+%casf2
+\newcommand{\casff}[5]{\left\{
+\begin{array}{rl}
+#1 &\text{ si }#2 \\
+#3 &\text{ si }#4 \\
+#5 &\text{ sinon.}
+\end{array}
+\right.}
+
+%cas2
+\newcommand{\cass}[5]{#1=\left\{
+\begin{array}{rl}
+#2 &\text{ si }#3 \\
+#4 &\text{ si }#5
+\end{array}
+\right.}
+
+\newcommand{\fnct}[5]{#1 \left\{
+\begin{array}{rl}
+#2&\longrightarrow #3\\
+#4&\longmapsto  #5
+\end{array}
+\right.}   
+
+
+%Diminuer taille titre
+\captionsetup{font=small,labelfont={color=MagSombre,bf}}
+
+%%% Create chapter header
+
+\makeatletter
+\renewcommand\tableofcontents{%
+  \null\hfill\textbf{\Large\color{MagSombre}\contentsname} \hfill\null\par
+  \@mkboth{\contentsname}{\contentsname}%
+  \@starttoc{toc}%
+}
+\makeatother
+
+
+\titleformat{\section}[frame] 
+  {\setlength\fboxrule{3pt}\bfseries\fontsize{13.8}{14}\selectfont\color{gris_up}}
+  {}{11pt}
+  {\color{MagSombre}$\;\;$\thesection .\hskip 0.7em#1}
+
+	

@@ -1,0 +1,122 @@
+\chapter{Commandes et environnements}
+\minitoc
+
+\newpage
+\section{Crédits}
+
+\url{http://web.mat.bham.ac.uk/R.W.Kaye/latex/defining/defining.pdf}
+\url{https://tex.stackexchange.com/questions/16814/restrict-macro-to-an-environment}
+\url{https://github.com/mathnaudint}
+
+\section{Commandes}
+
+Template de la définition d'une commande :
+\begin{verbatim}
+\newcommand{\cmd_name}[nb_args]{ici se trouve le contenu de la commande
+et #2 et #1 sont les valeurs des arguments si nb_args >= 2}
+\end{verbatim}
+
+
+\newcommand{\seq}[2][n]{#2_{1},\ldots,#2_{#1}}
+Définition de la commande :
+\begin{verbatim}
+\newcommand{\seq}[2][n]{#2_{1},\ldots,#2_{#1}}
+\end{verbatim}
+
+La commande s'appelle avec \verb+\seq+ et possède deux arguments notés \verb+#1+ et \verb+#2+. Elle permet d'afficher un $n$-uplet (paramètre optionel \verb+[n]+).
+Utilisation de la commande :
+\begin{verbatim}
+For some \(i \in \{ \seq{t} \} \) we have \( f(i)=\seq[m]{\alpha} \)
+\end{verbatim}
+donne :\\
+For some \(i \in \{ \seq{t} \} \) we have \( f(i)=\seq[m]{\alpha} \)
+
+\bigskip
+\par
+Les commandes peuvent être définies dans un environnement et celle-ci sont locales à l'environnement.
+
+\section{Environnements}
+
+\newenvironment{qsi}[1]%
+{\begin{quote}#1 wrote,\begin{sloppypar}\it}%
+{\end{sloppypar}\end{quote}}
+
+
+
+\newenvironment{quote2}[1]%
+{
+  \begin{quote}#1 wrote,\begin{sloppypar}\it
+  \newcommand{\gf}[1]{\mathbb{F}_{##1}}
+}%
+{
+  \end{sloppypar}\end{quote}
+}
+
+
+\bigskip
+\begin{verbatim}
+\newenvironment{qsi}[1]%
+{\begin{quote}#1 wrote,\begin{sloppypar}\it}%
+{\end{sloppypar}\end{quote}}
+
+
+\begin{qsi}{Pascal}
+I love finite fields !
+\end{qsi}
+\end{verbatim}
+donne :\\
+\begin{qsi}{Pascal}
+I love finite fields !
+\end{qsi}
+
+
+
+
+\begin{verbatim}
+\newenvironment{quote2}[1]%
+{
+  \begin{quote}#1 wrote,\begin{sloppypar}\it
+  \newcommand{\gf}[1]{\mathbb{F}_{##1}}
+}%
+{
+  \end{sloppypar}\end{quote}
+}
+
+\begin{quote2}{Pascal}
+I love finite fields ! Let's play with $\gf{2^m}$
+\end{quote2}
+\end{verbatim}
+donne :\\
+\begin{quote2}{Pascal}
+I love finite fields ! Let's play with $\gf{2^m}$
+\end{quote2}
+
+
+Définir une commande dans un environnement nécessite un double \#\# lors de l'appel de l'argument de la commande dans l'environnement.
+
+\section{Tests des environnements}
+
+\begin{verbatim}
+\newenvironment{mymathenv}%
+{
+  % liste des commandes dans l'environnement
+  \newcommand{\gf}[1]{\mathbb{F}_{##1}}
+  \newcommand{\gftwo}[1]{\mathbb{F}_{2^{##1}}}
+  \newcommand{\gfq}[1]{\mathbb{F}_{q^{##1}}}
+
+  \newcommand{\x}{\mathbf{x}}
+  \newcommand{\mbf}[1]{\mathbf{##1}}
+  \newcommand{\vect}[1]{##1_1, \ldots, ##1_n}
+}%
+{}
+
+
+
+\begin{watermarking}
+Soit $\mbf{a} \in \gftwo{m}$. Soit $\x = (\vect{x}), \mbf{y} \in \mathbb{R}^n$.
+\end{watermarking}
+\end{verbatim}
+donne :\\
+\begin{watermarking}
+Soit $\mbf{a} \in \gftwo{m}$. Soit $\x = (\vect{x}), \mbf{y} \in \mathbb{R}^n$.
+\end{watermarking}
